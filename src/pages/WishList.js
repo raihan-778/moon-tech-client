@@ -2,10 +2,11 @@ import React from "react";
 import ProductCard from "../components/ProductCard";
 import { useProducts } from "../context/ProductProvider";
 
-const Cart = () => {
+const WishList = () => {
   const {
-    state: { cart, loading, error },
+    state: { wishList, loading, error },
   } = useProducts();
+
   let content;
 
   if (loading) {
@@ -14,16 +15,15 @@ const Cart = () => {
   if (error) {
     content = <p>Something went wrong</p>;
   }
-  if (!loading && !error && cart.length === 0) {
+  if (!loading && !error && wishList.length === 0) {
     content = <p>Nothing to show, Product Card is empty</p>;
   }
-  if (!loading && !error && cart.length) {
-    content = cart.map((product) => (
+  if (!loading && !error && wishList.length) {
+    content = wishList.map((product) => (
       <ProductCard key={product.model} product={product} />
     ));
   }
-  console.log(cart);
-
+  console.log(wishList);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-7xl gap-14 mx-auto my-10">
       {content}
@@ -31,4 +31,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default WishList;
