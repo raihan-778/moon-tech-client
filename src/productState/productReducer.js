@@ -41,7 +41,7 @@ export const productReducer = (state, action) => {
           ...state.cart.filter((product) => product.id !== action.payload.id),
         ],
       };
-    case actionTypes.ADD_TO_WISH_LIST:
+    case actionTypes.ADD_TO_WISHLIST:
       return {
         ...state,
         wishlist: [...state.wishlist, action.payload],

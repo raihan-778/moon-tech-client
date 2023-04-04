@@ -4,10 +4,11 @@ import { useProducts } from "../context/ProductProvider";
 
 const WishList = () => {
   const {
-    state: { wishList, loading, error },
+    state: { wishlist, loading, error },
   } = useProducts();
 
   let content;
+  console.log(content);
 
   if (loading) {
     content = <p>...Loading</p>;
@@ -15,15 +16,15 @@ const WishList = () => {
   if (error) {
     content = <p>Something went wrong</p>;
   }
-  if (!loading && !error && wishList.length === 0) {
+  if (!loading && !error && wishlist.length === 0) {
     content = <p>Nothing to show, Product Card is empty</p>;
   }
-  if (!loading && !error && wishList.length) {
-    content = wishList.map((product) => (
-      <ProductCard key={product.model} product={product} />
+  if (!loading && !error && wishlist.length) {
+    content = wishlist.map((product) => (
+      <ProductCard key={product.id} product={product} />
     ));
   }
-  console.log(wishList);
+  console.log(wishlist);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-7xl gap-14 mx-auto my-10">
       {content}
