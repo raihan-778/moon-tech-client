@@ -17,7 +17,7 @@ const WishList = () => {
     content = <p>Something went wrong</p>;
   }
   if (!loading && !error && wishlist.length === 0) {
-    content = <p>Nothing to show, Product Card is empty</p>;
+    content = <p>Nothing to show, Wishlist is empty</p>;
   }
   if (!loading && !error && wishlist.length) {
     content = wishlist.map((product) => (

@@ -19,7 +19,7 @@ const Cart = () => {
   }
   if (!loading && !error && cart.length) {
     content = cart.map((product) => (
-      <ProductCard key={product.model} product={product} />
+      <ProductCard key={product.id} product={product} />
     ));
   }
   console.log(cart);

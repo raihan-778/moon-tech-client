@@ -47,10 +47,10 @@ const ProductCard = ({ product }) => {
         </div>
         <button
           title="Add to wishlist"
+          className="bg-indigo-500  py-2 px-2 rounded-full"
           onClick={() =>
             dispatch({ type: actionTypes.ADD_TO_WISHLIST, payload: product })
           }
-          className="bg-indigo-500  py-2 px-2 rounded-full"
         >
           <BiListPlus className="text-white text-3xl" />
         </button>
